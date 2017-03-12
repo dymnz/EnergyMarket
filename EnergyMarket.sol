@@ -5,7 +5,6 @@ contract SupplierContract
 	enum Status { OnTarget, LowerThanTarget, HigherThanTarget }
 
 	struct Supplier {		
-		address owner;
 		uint deposited;
 		uint fineRate;
 		uint target;
@@ -22,6 +21,7 @@ contract SupplierContract
 	}
 
 	// Contract is owned by a supplier
+	address owner;
 	Supplier supplier;
 
 	// Addresse that is supplier or consumer;
