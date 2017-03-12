@@ -4,15 +4,7 @@ contract SupplierContract
 {
 	enum EntityStatus { OnTarget, LowerThanTarget, HigherThanTarget }
 
-	struct Supplier {		
-		uint deposited;
-		uint fineRate;
-		uint target;
-		uint allowedRange;
-		uint pendingPayment;	
-	}
-
-	struct Consumer {
+	struct Role {
 		uint deposited;
 		uint fineRate;
 		uint target;
@@ -22,12 +14,12 @@ contract SupplierContract
 
 	// Contract is owned by a supplier
 	address owner;
-	Supplier supplier;
+	Role supplier;
 
 	// Addresse that is supplier or consumer;
 	mapping (address => bool) registered;
 
-	mapping (address => Consumer) consumerList;
+	mapping (address => Role) consumerList;
 	
 	function SupplierContract(supplierFineRate, supplierTarget, supplierAllowedRange);
 
