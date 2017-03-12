@@ -2,7 +2,7 @@ pragma solidity ^0.4.2;
 
 contract SupplierContract 
 {
-	enum Status { OnTarget, LowerThanTarget, HigherThanTarget }
+	enum EntityStatus { OnTarget, LowerThanTarget, HigherThanTarget }
 
 	struct Supplier {		
 		uint deposited;
