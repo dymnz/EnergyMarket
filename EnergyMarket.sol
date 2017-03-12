@@ -10,13 +10,14 @@ contract SupplierContract
 		uint target;
 		uint allowedRange;	
 		uint pendingPayment;	
+		EntityStatus status;
 	}
 
 	// Contract is owned by a supplier
 	address owner;
 	Role supplier;
 
-	// Addresse that is supplier or consumer;
+	// Address that is supplier or consumer;
 	mapping (address => bool) registered;
 
 	mapping (address => Role) consumerList;
@@ -35,7 +36,7 @@ contract SupplierContract
 
 	// Deposit/withdraw for supplier/cosumer
 	function deposit() onlyRegistered;
-	function withdraw() onlyRegistered;
+	function withdraw() payable onlyRegistered;
 }
 
 contract EnergyMarket {
